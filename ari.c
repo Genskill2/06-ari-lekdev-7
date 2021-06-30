@@ -1,32 +1,32 @@
 #include<stdio.h>
-#include<cs50.h>
 #include<math.h>
+#include<string.h>
+#include<cs50.h>
 #include<ctype.h>
-#include<strings.h>
 
 string ari(string s)
 {
-      int chara=0, word=0, sentences=0;
-      for(int i=0; i<strlen(s); i++)
-      {
-          if (isalnum(s[i]))
-          {
-            chara++;
-          }
-          else if (s[i]== ' ')
-          {
-            word++;
-          }
-          else if (s[i] == '.' || s[i] == '?' || s[i] == '!')
-          {
-            sentences++;
-          }
-          else
-          {
-            continue;
-          }
-       }
-       float answer = (4.71 * characters/words)+(0.5*words/sentences)-21.43;
+	int characters=0, words=0, sentences=0;
+	for(int i=0;i<strlen(s);i++)
+	{
+		if (isalnum(s[i]))
+		{
+			characters++;
+		}
+		else if (s[i] == ' ')
+		{
+			words++;
+		}
+		else if (s[i] == '.' || s[i] == '?' || s[i] == '!')
+		{
+			sentences++;
+		}
+		else
+		{
+			continue;
+		}
+	}
+	float answer = (4.71 * characters/words)+(0.5*words/sentences)-21.43;
 	int real = ceil(answer);
 	
 	switch (real)
@@ -60,4 +60,4 @@ string ari(string s)
 	case 14:
 		return "Professor";
 	}
- } 
+} 
